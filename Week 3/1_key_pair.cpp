@@ -1,30 +1,40 @@
-
-
-
-
-//APPROACH 2
-//{ Driver Code Starts
 #include <iostream>
+#include<algorithm>
 
 using namespace std;
 
 
-// } Driver Code Ends
-//User function template for C++
 class Solution{
 public:	
-	// Function to check if array has 2 elements
-	// whose sum is equal to the given value
 	bool hasArrayTwoCandidates(int arr[], int n, int x) {
-	    // code here
-	    for(int i=0; i<n; i++){
-	        for(int j=i+1; j<n; j++){
-	            if(arr[i]+arr[j] == x){
-	                return true;
-	            }
-	        }
-	    }
-	    return false;
+//APPROACH 1
+	    // for(int i=0; i<n; i++){
+	    //     for(int j=i+1; j<n; j++){
+	    //         if(arr[i]+arr[j] == x){
+	    //             return true;
+	    //         }
+	    //     }
+	    // }
+	    // return false;
+
+//APPROACH 2 and better one
+        sort(arr, arr + n);
+	    int l = 0;
+        int h = n-1;
+        while(l<h){
+	       int sum = arr[l] + arr[h];
+	       if(sum == x){
+	           return true;
+	       }
+	       else if(sum > x){
+	           h--;
+	       }
+	       else{
+	           l++;
+	       }
+	   }
+	   return false;
+        
 	}
 };
 
