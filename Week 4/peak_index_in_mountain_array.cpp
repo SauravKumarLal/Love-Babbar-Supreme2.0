@@ -13,7 +13,7 @@ public:
             else{
                 //on line B
                 e = mid;
-            }
+            }  
         }
         return s;
     }
