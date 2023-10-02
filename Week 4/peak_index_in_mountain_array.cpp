@@ -1,5 +1,5 @@
 //You must solve it in O(log(arr.length)) time complexity means binary search
-
+#include<vector>
 class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
