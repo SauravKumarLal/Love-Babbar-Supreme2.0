@@ -1,5 +1,5 @@
 //deletion from linkedList
-
+//DOUBLY LINKEDLIST
 #include <iostream>
 using namespace std;
 
@@ -152,7 +152,7 @@ void deleteNode(Node* &head, Node* &tail, int position){
         delete temp;
         head = NULL;
         tail = NULL;
-        retun;
+        return;
     }
     //delete from head
     else if (position == 1){
@@ -164,8 +164,11 @@ void deleteNode(Node* &head, Node* &tail, int position){
     }
 
     else if(position == len){
-        //last node ko delete kardo
-        //traverse kar k second last node tak aana hao
+
+        //there is some errror, look inti it
+
+        last node ko delete kardo
+        traverse kar k second last node tak aana hao
         Node* prev = head;
         while(prev->next != tail){
             prev = prev->next;
@@ -173,6 +176,7 @@ void deleteNode(Node* &head, Node* &tail, int position){
         prev->next = NULL;
         delete tail;
         tail = prev;
+        
     }
 
     else{
@@ -187,8 +191,6 @@ void deleteNode(Node* &head, Node* &tail, int position){
         curr->next = NULL;
         delete curr; 
     }
-    
-
 }
 int main()
 {
@@ -201,7 +203,7 @@ int main()
     insertAtHead(head, tail, 50);
 
     print(head);
-    deleteNode(head, tail, 5);
+    deleteNode(head, tail, 3);
     print(head);
     cout << endl;
     return 0;
